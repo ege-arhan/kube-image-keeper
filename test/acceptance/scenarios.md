@@ -304,7 +304,7 @@ task acceptance-apply -- --kubeconfig <path> --context <name> --file test/accept
 - policy: `task acceptance-get -- --kubeconfig <path> --context <name> validatingadmissionpolicy/<fullname>-secret-syncer --jsonpath '{.metadata.name}'`
 - binding and its actions: `task acceptance-get -- --kubeconfig <path> --context <name> validatingadmissionpolicybinding/<fullname>-secret-syncer --jsonpath '{.spec.policyName} {.spec.validationActions}'`
 - nothing created: `task acceptance-get -- --kubeconfig <path> --context <name> -n kuik-test secret/kuik-inject-kuik-test-reserved` answers `NotFound`
-- the syncer still writes: `task acceptance-get -- --kubeconfig <path> --context <name> -n kuik-test secret/kuik-inject-imagealternative-kuik-test-private`
+- the syncer still writes: `task acceptance-get -- --kubeconfig <path> --context <name> -n kuik-test secret/kuik-inject-imagealternative-kuik-test-private`, or without `--private-repo` `task acceptance-get -- --kubeconfig <path> --context <name> -n kuik-test secret/kuik-inject-imagealternative-kuik-test-pull-secret`
 
 **Explore**: the refusal comes from the policy, not from RBAC: the error names the policy and its message, never `forbidden: User ... cannot create`. A Secret that slipped through means the policy is missing or not bound: report it, `acceptance-cleanup` removes it with the namespace.
 
