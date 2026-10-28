@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-28 · **Status:** decided
 
-**Decision:** The scenarios of `test/acceptance/scenarios.md` are the user stories kuik sells, the use cases of [`docs/use-cases/`](../docs/use-cases/), each played end to end on a real cluster with real registries; the `release-acceptance` agent explores off-script variants from them. Every precise behaviour (an event, a reason, an annotation, a counter), a bug fix's included, is checked by the Kind e2e suite or envtest, never by acceptance. Completes [0015](./0015-acceptance-tooling-acts-the-agent-judges.md), whose tooling stays.
+**Decision:** The scenarios of `test/acceptance/scenarios.md` are the user stories kuik sells, the use cases of [`docs/use-cases/`](../docs/use-cases/), each played end to end on a real cluster with real registries; the `release-acceptance` agent explores off-script variants from them. Every precise behaviour (an event, a reason, an annotation, a counter), a bug fix's included, is checked by the Kind e2e suite or envtest, never by acceptance. Supersedes the per-release scenario drafting of [0015](./0015-acceptance-tooling-acts-the-agent-judges.md); its tooling stays.
 
 **Why:**
 
